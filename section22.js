@@ -19,6 +19,12 @@ const fullNames = [
 
 const numbers = [1, 2, 3, 4];
 
+const scores = [
+  85.23, 92.75, 74.50, 88.10, 95.99,
+  67.45, 79.80, 90.66, 83.33, 72.14,
+  99.01, 64.70, 81.56, 76.88, 89.45
+];
+
 // try {
 //   hello.toUpperCase()
 // } catch {
@@ -57,9 +63,55 @@ const numbers = [1, 2, 3, 4];
 
 // console.log(firstNames)
 
-const goodMovies = movies.filter(movie => movie.score > 80);
-console.log(goodMovies)
+// const goodMovies = movies.filter(movie => movie.score > 80);
+// console.log(goodMovies)
 
-newNumbers = numbers.filter(evenNum => evenNum % 2 === 0 )
+// newNumbers = numbers.filter(evenNum => evenNum % 2 === 0 )
 
-console.log(newNumbers)
+// console.log(newNumbers)
+
+// a function to get names depending on the length 
+// function validUserNames(usernames) {
+//   const result = usernames.filter(name => name.length < 10);
+//   return result;
+// }
+
+// reduce methood 
+// const total = numbers.reduce((accumulator, currentValue) => {
+//   return accumulator + currentValue
+// });
+
+// I could have also done it using the for of loop 
+// let total = 0;
+// for (let number of numbers) {
+//   total += number;
+// }
+
+// console.log(total);
+
+// using the reduce to get the min value in the array 
+// I am trying to remember the actual arguement names 
+// but I could have used (min, score) where min = accumulator & score = currentValue
+const minValue = scores.reduce((accumulator, currentValue) => {
+  if(accumulator < currentValue) {
+    return accumulator
+  }
+  return currentValue
+});
+
+const maxValue = scores.reduce((maxVal, currentVal) => {
+  if (maxVal > currentVal) {
+    return maxVal
+  }
+  else {
+    return currentVal 
+  }
+})
+
+// also can be used on objects
+const movieRating = movies.reduce((bestMovie, currentMovie) => {
+  if(bestMovie.score > currentMovie.score) {
+    return bestMovie
+  }
+  return currentMovie
+})
