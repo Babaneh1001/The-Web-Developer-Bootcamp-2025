@@ -224,6 +224,8 @@ const movieRating = movies.reduce((bestMovie, currentMovie) => {
 });
 ```
 
+
+
 ------------------------------------------------------------------------
 
 # ❓ Things that are a bit confusing
