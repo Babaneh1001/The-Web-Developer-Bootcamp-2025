@@ -18,10 +18,14 @@ for (let span = 0; span < spans.length; span++) {
 const uls = document.querySelectorAll('li');
 
 for (let i = 0; i < uls.length; i++) {
-  if (uls[i].classList.contains('highlight')) {
-    uls[i].classList.remove('highlight')
-  } else {
-    uls[i].classList.add('highlight')
-  }
+
+  // if (uls[i].classList.contains('highlight')) {
+  //   uls[i].classList.remove('highlight')
+  // } else {
+  //   uls[i].classList.add('highlight')
+  // }
+
+  // a more optimzed way of doing this would have been 
+  uls[i].classList.toggle('highlight');
 }
 
